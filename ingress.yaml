@@ -1,21 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: kubetrack-ingress
+  name: k8sci-monitor-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: nginx
   rules:
-    - host: kubetrack.local  # /etc/hosts === ( 127.0.0.1    kubetrack.local )
-
+    - host: k8sci.local    # You can change this to your domain or EC2 public DNS
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: kubetrack-service
+                name: k8sci-monitor-service
                 port:
                   number: 80
-
