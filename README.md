@@ -43,10 +43,10 @@ This project demonstrates an end-to-end DevOps pipeline that deploys a static po
 ## 📊 Sample Prometheus Queries
 
 ```promql
-```100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)```
-```100 * (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes))```
-```rate(container_cpu_usage_seconds_total{image!=""}[5m])```
-```container_memory_usage_bytes{image!=""}```
+100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
+100 * (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes))
+rate(container_cpu_usage_seconds_total{image!=""}[5m])
+container_memory_usage_bytes{image!=""}
 ```
 
 
